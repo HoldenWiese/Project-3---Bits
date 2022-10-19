@@ -32,7 +32,15 @@ public:
     void toggle();            // Flips all bits
     void shift(int n);        // If n > 0, shifts bits right n places; if n < 0, shifts left
     void rotate(int n);       // If n > 0, rotates right n places; if n < 0, rotates left
-    int ones() const;         // Returns how many bits are set in the underlying integer
+    int ones() const {
+        int sum = 0;
+        for(unsigned int i = 0; i < this->size(); ++i){
+            if(this->at(i) == IType(1)){
+                sum += 1;
+            }
+        }
+        return sum;
+    };         // Returns how many bits are set in the underlying integer
     int zeroes() const {      // Returns how many bits are reset in the underlying integer
         return NBITS - ones();
     }
@@ -104,21 +112,26 @@ void Bits::shift(int n){
         bits = bits >> n;
     } 
     if(n < 0) {
-        bits = bits << ~n;
+        bits = bits << (~n + 1);
+    }
+}
+
+void Bits::rotate(int n){
+    Bits tempBits = Bits(this->bits);
+    if(n > 0){
+        n = n % tempBits.size();
+        tempBits.shift(-(tempBits.size()) + n);
+        this->shift(n);
+        std::cout << "tempBits: " << tempBits << std::endl;
+        for(int i = 0; i < this->size(); ++i){
+            if((this->at(i) == IType(1)) || tempBits.at(i) == IType(1)){
+                this->set(i);
+            }
+        }
+    }
+    if(n < 0){
+        this->rotate(this->size() + n);
     }
 }
 
 #endif
-
-// for(unsigned int i = 0; i < this->size(); ++i){
-//         if(i == pos){
-            
-//         }
-//     }
-
-        // std::cout << std:: endl;
-        // std::cout << "at method:" << std::endl;
-        // std::cout << bits << std::endl;
-        // std::cout << IType(1) << std::endl;
-        // std::cout << pos << std:: endl;
-        // std::cout << std:: endl;

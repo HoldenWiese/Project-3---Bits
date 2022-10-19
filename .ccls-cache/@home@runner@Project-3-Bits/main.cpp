@@ -73,11 +73,19 @@ int main() {
     // std::cout << "Bits: " << test7 << std::endl;
 
     //Testing shift()
+    // Bits test7 = Bits(15);
+    // std::cout << "Bits: " << test7 << std::endl;
+    // test7.shift(1);
+    // std::cout << "Bits: " << test7 << std::endl;
+    // test7.shift(-1);
+    // std::cout << "Bits: " << test7 << std::endl;
+
+    // Testing rotate()
     Bits test7 = Bits(15);
     std::cout << "Bits: " << test7 << std::endl;
-    test7.shift(1);
+    test7.rotate(-61);
     std::cout << "Bits: " << test7 << std::endl;
-    test7.shift(-1);
-    std::cout << "Bits: " << test7 << std::endl;
+    // test7.shift(-1);
+    // std::cout << "Bits: " << test7 << std::endl;
 
 }
