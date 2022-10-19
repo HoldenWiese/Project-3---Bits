@@ -54,13 +54,30 @@ int main() {
     // std::cout << "Bits: " << test5 << std::endl;
 
     // Testing assign()
-    Bits test6 = Bits(15);
-    std::cout << "Bits: " << test6 << std::endl;
-    test6.assign(1, false);
-    std::cout << "Bits: " << test6 << std::endl;
-    test6.assign(1, true);
-    std::cout << "Bits: " << test6 << std::endl;
-    using IType = unsigned long long; // We only have to change the integer type here, if desired
-    test6.assign(IType(1));
-    std::cout << "Bits: " << test6 << std::endl;
+    // Bits test6 = Bits(15);
+    // std::cout << "Bits: " << test6 << std::endl;
+    // test6.assign(1, false);
+    // std::cout << "Bits: " << test6 << std::endl;
+    // test6.assign(1, true);
+    // std::cout << "Bits: " << test6 << std::endl;
+    // using IType = unsigned long long; // We only have to change the integer type here, if desired
+    // test6.assign(IType(1));
+    // std::cout << "Bits: " << test6 << std::endl;
+
+    // Testing toggle()
+    // Bits test7 = Bits(15);
+    // std::cout << "Bits: " << test7 << std::endl;
+    // test7.toggle(1);
+    // std::cout << "Bits: " << test7 << std::endl;
+    // test7.toggle();
+    // std::cout << "Bits: " << test7 << std::endl;
+
+    //Testing shift()
+    Bits test7 = Bits(15);
+    std::cout << "Bits: " << test7 << std::endl;
+    test7.shift(1);
+    std::cout << "Bits: " << test7 << std::endl;
+    test7.shift(-1);
+    std::cout << "Bits: " << test7 << std::endl;
+
 }

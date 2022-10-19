@@ -85,6 +85,29 @@ void Bits::assign(IType n){
     this->bits = n;
 }
 
+void Bits::toggle(int pos){
+    if(this->at(pos) == IType(1)){
+        this->reset(pos);
+    } else if(this->at(pos) == IType(0)) {
+        this->set(pos);
+    }
+}
+
+void Bits::toggle(){
+    for(unsigned int i = 0; i < this->size(); ++i){
+        this->toggle(i);
+    }
+}
+
+void Bits::shift(int n){
+    if(n > 0){
+        bits = bits >> n;
+    } 
+    if(n < 0) {
+        bits = bits << ~n;
+    }
+}
+
 #endif
 
 // for(unsigned int i = 0; i < this->size(); ++i){
