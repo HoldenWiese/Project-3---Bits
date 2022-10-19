@@ -73,6 +73,18 @@ void Bits::reset(){
     }
 }
 
+void Bits::assign(int pos, bool val){
+    if((this->at(pos) == IType(1)) && (val == false)){
+        this->reset(pos);
+    } else if((this->at(pos) == IType(0)) && (val == true)) {
+        this->set(pos);
+    }
+}
+
+void Bits::assign(IType n){
+    this->bits = n;
+}
+
 #endif
 
 // for(unsigned int i = 0; i < this->size(); ++i){

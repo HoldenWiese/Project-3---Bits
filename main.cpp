@@ -37,12 +37,30 @@ int main() {
     // std::cout << test4 << std::endl;
 
     // Testing reset(pos) method
-    std::cout << "Testing reset()" << std::endl;
-    Bits test5 = Bits(7);
-    std::cout << "Bits: " << test5 << std::endl;
-    std::cout << "Bits size: " << test5.size() << std::endl;
-    std::cout << "Bit at pos 1: " << test5.at(1) << std::endl;
-    test5.reset(1);
-    std::cout << "Bit at pos 1 after test3.reset(1): " << test5.at(1) << std:: endl;
-    std::cout << "Bits: " << test5 << std::endl;
+    // std::cout << "Testing reset()" << std::endl;
+    // Bits test5 = Bits(7);
+    // std::cout << "Bits: " << test5 << std::endl;
+    // std::cout << "Bits size: " << test5.size() << std::endl;
+    // std::cout << "Bit at pos 1: " << test5.at(1) << std::endl;
+    // test5.reset(1);
+    // std::cout << "Bit at pos 1 after test3.reset(1): " << test5.at(1) << std:: endl;
+    // std::cout << "Bits: " << test5 << std::endl;
+
+    // std::cout << " " << std::endl;
+    // Bits test5 = Bits(7);
+    // std::cout << "Bits: " << test5 << std::endl;
+
+    // test5.reset();
+    // std::cout << "Bits: " << test5 << std::endl;
+
+    // Testing assign()
+    Bits test6 = Bits(15);
+    std::cout << "Bits: " << test6 << std::endl;
+    test6.assign(1, false);
+    std::cout << "Bits: " << test6 << std::endl;
+    test6.assign(1, true);
+    std::cout << "Bits: " << test6 << std::endl;
+    using IType = unsigned long long; // We only have to change the integer type here, if desired
+    test6.assign(IType(1));
+    std::cout << "Bits: " << test6 << std::endl;
 }
